@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronômetro</title>
+    <style>
+        h1 {
+            padding: 0;
+            margin: 0;
+            margin-top: 20px;
+            font-size: 500%;
+            text-align: center;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: rgb(4, 112, 184);
+        }
+
+        .img {
+            display: flex;
+            /* "Display: flex" é uma propriedade do CSS que transforma um elemento HTML em um
+            "container flexível". Isso permite que os elementos filhos desse container sejam organizados em 
+            linhas ou colunas e ajustados em relação ao espaço disponível, facilitando a criação de layouts 
+            flexíveis e responsivos. */
+            align-items: center;
+            /*você pode usar "justify-content" para alinhar os elementos horizontalmente
+            e "align-items" para alinhá-los verticalmente.*/
+            justify-content: center;
+
+        }
+
+        .imagem {
+            margin-top: 20px;
+            width: 300px;
+            height: 300px;
+        }
+
+        p {
+            padding: 0;
+            margin: 0;
+            margin-right: 5px;
+            font-size: 90px;
+            display: inline-block;
+        }
+
+        .crn {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        button {
+            padding: 16px;
+            padding-right: 30px;
+            padding-left: 30px;
+            border-radius: 18px;
+            font-size: 20px;
+        }
+
+        #start {
+            margin-right: 20px;
+        }
+
+        #stop {
+            margin-right: 20px;
+        }
+
+        .numeros {
+            text-align: center;
+        }
+
+        .trns {
+            opacity: 0.5;
+        }
+
+        #velbtn {
+            border-radius: 0%;
+            font-size: 9px;
+            border-color: red;
+            border: 30%;
+            background-color: blue;
+        }
+
+        .vel {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        #inp0 {
+            padding-top: 9px;
+            padding-bottom: 9px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Cronômetro</h1>
+    <div class="img">
+        <img src="download.png" class="imagem">
+
+    </div>
+    <div class="numeros">
+        <p id="horas">00</p>
+        <p id="m">:</p>
+        <p id="segundos">00</p>
+        <p id="n">:</p>
+        <p id="milisegundos">00</p>
+    </div>
+
+    <div class="crn">
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+        <button id="restart">Restart</button>
+    </div>
+
+    <div class="vel">
+        <button id="velbtn">Velocidade =</button>
+        <input type="number" id="inp0">
+    </div>
+
+    <script>
+        let btnStart = document.querySelector("#start")
+        let btnStop = document.querySelector("#stop")
+        let btnRestart = document.querySelector("#restart")
+        let milisegundos = document.querySelector("#milisegundos")
+        let segundos = document.querySelector("#segundos")
+        let horas = document.querySelector("#horas")
+        let mili = 0
+        let seg = 0
+        let hor = 0
+        let click = 0
+        let inp0 = document.querySelector("#inp0")
+        let velbtn = document.querySelector("#velbtn")
+        let tempo = 10
+
+        function Start() {
+            click++
+            btnStart.classList.add('trns')
+            setTimeout(function () {
+                btnStart.classList.remove('trns')
+            }, 100)
+            btnStop.addEventListener('click', Stop)
+            function Stop() {
+                btnStop.classList.add('trns')
+                setTimeout(function () {
+                    btnStop.classList.remove('trns')
+                }, 100)
+                clearInterval(inter)
+                click = 0
+            }
+
+            btnRestart.addEventListener('click', Restart)
+            function Restart() {
+                btnRestart.classList.add('trns')
+                setTimeout(function () {
+                    btnRestart.classList.remove('trns')
+                }, 100)
+                clearInterval(inter)
+                mili = 0
+                seg = 0
+                hor = 0
+                milisegundos.innerHTML = `00`
+                segundos.innerHTML = `00`
+                horas.innerHTML = `00`
+                click = 0
+            }
+
+            let inter = setInterval(function () {
+                if (hor <= 8 && seg == 60) {
+                    seg = 0
+                    hor++
+                    horas.innerHTML = `${`0` + hor}`
+                } else if (hor < 99 && seg == 60) {
+                    seg = 0
+                    hor++
+                    horas.innerHTML = `${hor}`
+                } else if (hor == 99) {
+                    hor = 0
+                    horas.innerHTML = `00`
+                } else if (mili == 99 && seg <= 8) {
+                    mili = 0
+                    seg++
+                    segundos.innerHTML = `${`0` + seg}`
+                } else if (mili == 99 && seg <= 59) {
+                    mili = 0
+                    seg++
+                    if (seg == 60) {
+                        segundos.innerHTML = `00`
+                    } else {
+                        segundos.innerHTML = `${seg}`
+                    }
+
+                } else if (seg == 60) {
+                    mili = 0
+                } else if (mili <= 8) {
+                    mili++
+                    milisegundos.innerHTML = `${`0` + mili}`
+                } else if (mili <= 98) {
+                    mili++
+                    milisegundos.innerHTML = `${mili}`
+                } else {
+                    milisegundos.innerHTML = `00`
+                    mili = 0
+                }
+            }, tempo)
+        }
+        function cl() {
+            if (click == 0) {
+                Start()
+            }
+        }
+        btnStart.addEventListener('click', cl)
+
+        velbtn.addEventListener('click',
+            function () {
+                console.log(`deu ok`)
+                tempo = 10
+                if (inp0.value > 1) {
+                    tempo = tempo / inp0.value
+                } else if (inp0.value < 1) {
+                    tempo = tempo * inp0.value
+                }
+            })
+
+    </script>
+
+</body>
+
+</html>
