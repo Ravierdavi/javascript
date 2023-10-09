@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Redeclaring a Variable Using var</h2>
+
+    <p id="demo1"></p>
+
+    <h2>Redeclaring a Variable Using let</h2>
+
+    <p id="demo2"></p>
+
+    <script>
+        // Redeclaring a variable using the var keyword can impose problems.
+
+        // Redeclaring a variable inside a block will also redeclare the variable outside the block:
+
+        var x = 10
+        // here x is 10
+
+        {
+            var x = 2
+            // here x is 2
+        }
+
+        // here x is 2
+        document.getElementById("demo1").innerHTML = x
+
+        // Redeclaring a variable using the let keyword can solve this problem.
+
+        // Redeclaring a variable inside a block will not redeclare the variable outside the block:
+
+        let c = 10
+        // here x is 10
+
+        {
+            let c = 2
+            // here x is 2
+        }
+
+        // here x is 10
+        document.getElementById("demo2").innerHTML = c
+    </script>
+</body>
+</html>

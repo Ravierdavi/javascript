@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>JavaScript Hoisting</h2>
+
+    <p>With <b>var</b>, you can use a variable before it is declared:</p>
+
+    <p id="demo1"></p>
+
+    <p>With <b>let</b>, you cannot use a variable before it is declared.</p>
+
+    <p id="demo2"></p>
+
+    <script>
+        // Variables defined with var are hoisted to the top and can be initialized at any time.
+
+        // Meaning: You can use the variable before it is declared:
+
+        carName = "Volvo"
+        document.getElementById("demo1").innerHTML = carName
+
+        // If you want to learn more about hoisting, study the chapter JavaScript Hoisting.
+
+        // Variables defined with let are also hoisted to the top of the block, but not initialized.
+
+        // Meaning: Using a let variable before it is declared will result in a ReferenceError:
+
+        try {
+            carName = "Saab";
+            let carName = "Volvo";
+        }
+        catch(err) {
+            document.getElementById("demo2").innerHTML = err;
+        }
+    </script>
+</body>
+</html>
