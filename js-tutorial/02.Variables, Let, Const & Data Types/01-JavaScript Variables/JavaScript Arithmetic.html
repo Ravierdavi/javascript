@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .border-bottom {
+            border-bottom: 2px solid;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Variables</h1>
+
+    <p>The result of adding "John" + " " + "Doe" is:</p>
+    <p class="border-bottom" id="demo1"></p>
+
+    <p>The result of adding 5 + 2 + 3 is:</p>
+    <p class="border-bottom" id="demo2"></p>
+
+    <p>The result of adding "5" + 2 + 3 is:</p>
+    <p class="border-bottom" id="demo3"></p>
+    
+    <p>The result of adding 2 + 3 + "5" is:</p>
+    <p id="demo4"></p>
+
+    <script>
+        // You can also add strings, but strings will be concatenated:
+
+        let a = "John" + " " + "Doe"
+        document.getElementById("demo1").innerHTML = a
+
+        // As with algebra, you can do arithmetic with JavaScript variables, using operators like = and +:
+
+        let b = 5 + 2 + 3
+        document.getElementById("demo2").innerHTML = b
+
+        // If you put a number in quotes, the rest of the numbers will be treated as strings, and concatenated.
+
+        let c = "5" + 2 + 3
+        document.getElementById("demo3").innerHTML = c
+
+        let d = 2 + 3 + "5"
+        document.getElementById("demo4").innerHTML = d
+    </script>
+</body>
+</html>

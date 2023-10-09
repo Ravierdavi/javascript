@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>JavaScript Variables</h1>
+
+    <p>If you re-declare a JavaScript variable (only works with the var variable), it will not lose its value.</p>
+
+    <p id="demo"></p>
+
+    <script>
+        // If you re-declare a JavaScript variable declared with var, it will not lose its value.
+
+        // The variable carName will still have the value "Volvo" after the execution of these statements:
+        
+        var carName = "Pedro Paulo"
+        var carName
+        
+        document.getElementById("demo").innerHTML = carName
+
+        //         You cannot re-declare a variable declared with let or const.
+
+        // This will not work:
+
+        /*
+        let name = "Dorival Delicio"
+        let name
+        */
+    </script>
+</body>
+</html>
