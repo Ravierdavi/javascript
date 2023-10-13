@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>JavaScript Booleans</h1>
+    <p id="demo"></p>
+
+    <script>
+        document.getElementById("demo").innerHTML = 
+        `
+        The Boolean value of 0 (zero) is false: <strong>${Boolean(0)}</strong> <br>
+        The Boolean value of -0 (minus zero) is false: <strong>${Boolean(-0)}</strong> <br>
+        The Boolean value of "" (empty string) is false: <strong>${Boolean("")}</strong> <br>
+        The Boolean value of undefined is false: <strong>${Boolean(undefined)}</strong> <br>
+        The Boolean value of null is false: <strong>${Boolean(null)}</strong> <br>
+        he Boolean value of false is (you guessed it) false: <strong>${Boolean(false)}</strong> <br>
+        The Boolean value of NaN is false: <strong>${Boolean(NaN)}</strong>
+        `
+    </script>
+</body>
+</html>
