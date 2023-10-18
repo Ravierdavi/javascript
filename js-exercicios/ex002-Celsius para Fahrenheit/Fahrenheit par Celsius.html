@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fahrenheit para Celsius</title>
+</head>
+<body>
+    <h1>Fahrenheit para Celsius</h1>
+
+    <form>
+        <label>
+            Conversor: <input type="number" name="fah" id="ifah" placeholder="°F">
+        </label>
+
+        <input type="button" value="Enviar" id="send">
+        
+        <p> Celsius: <output id="res"></output></p>
+    </form>
+
+    <script>
+        let res = document.getElementById("res")
+
+        document.getElementById("send").addEventListener("click", function () {
+            let fah = Number(document.getElementById("ifah").value)
+
+            res.innerHTML = (fah - 32) * 5 / 9
+        })
+    </script>
+</body>
+</html>

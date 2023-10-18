@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Círculos</title>
+</head>
+<body>
+    <h1>Descubra a área e o comprimento de acordo com o raio do círculo</h1>
+
+    <form>
+        <label for="iraio">Raio do Círculo:</label>
+        <input type="number" name="raio" id="iraio" placeholder="put here">
+
+        <input type="button" value="Enviar" id="send">
+
+        <p>Área: <output id="resArea"></output></p>
+
+        <p>Comprimento: <output id="resComprimento"></output></p>
+    </form>
+
+    <script>
+        let resA = document.getElementById("resArea"),
+        resC = document.getElementById("resComprimento")
+
+        document.getElementById("send").addEventListener("click", function () {
+            let raio = Number(document.getElementById("iraio").value)
+
+            if (raio != 0) {
+                resA.innerHTML = raio * raio * Math.PI
+                resC.innerHTML = raio * 2 * Math.PI
+            }
+        })
+    </script>
+</body>
+</html>
