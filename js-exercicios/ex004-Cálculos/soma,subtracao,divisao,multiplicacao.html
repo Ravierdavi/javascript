@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular</title>
+    <style>
+        @keyframes fundo {
+            to {
+                background-size: 100% 100%;
+            }
+        }
+
+        @keyframes flip {
+            60% {
+                transform: rotate(300deg) translate(100px, -200px);
+            }
+
+            100% {
+                transform: rotate(360deg) translate(0px, 0px);
+            }
+        }
+
+        @keyframes load {
+            to {
+                transform: translate(10px, -39.5px) rotate(360deg);
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100vw;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background: linear-gradient(135deg, orange, white);
+            background-size: 400% 400%;
+            animation: fundo alternate ease-in 10s infinite;
+        }
+
+        .estrutura {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.212);
+            animation: flip ease-in 2s;
+        }
+
+        .values label {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .values input {
+            width: 150px;
+            height: 25px;
+            margin-left: 5px;
+        }
+
+        .options * {
+            margin-bottom: 5px;
+        }
+
+        .options label {
+            display: block;
+        }
+
+        .result {
+            margin-bottom: 10px;
+        }
+
+        .result h1 {
+            margin-bottom: 5px;
+        }
+
+        .result input {
+            position: relative;
+            padding: 10px;
+            font-size: 1.4em;
+        }
+
+        button {
+            font-weight: 600;
+            border: none;
+            border-radius: 6px;
+            background-color: rgb(103, 212, 255);
+            padding: 10px;
+            transition: 0.2s ease-in;
+        }
+
+        button:hover {
+            opacity: .8;
+            transform: scale(1.1);
+        }
+
+        .load::before {
+            position: absolute;
+            content: "";
+            width: 30px;
+            height: 30px;
+            border-top: 3px solid rgb(100, 100, 100);
+            border-radius: 50%;
+            transform: translate(10px, -39.5px);
+            animation: load .5s 2;
+        }
+    </style>
+</head>
+<body>
+    <main class="estrutura">
+
+        <section class="values">
+            <label>
+                <h1>Valor 1: </h1> <input type="number" name="value1" id="value1">
+            </label>
+            <label>
+                <h1>Valor 2: </h1> <input type="number" name="value2" id="value2">
+            </label>
+        </section>
+
+        <section class="options">
+            <h1>Opções:</h1>
+            <label><input type="radio" name="calc" checked>Soma</label>
+            <label><input type="radio" name="calc">Subtração</label>
+            <label><input type="radio" name="calc">Multiplicação</label>
+            <label><input type="radio" name="calc">Divisão</label>
+        </section>
+
+        <section class="result">
+            <h1>Resultado:</h1>
+            <input type="number" name="res" id="res" disabled>
+            <div id="load"></div>
+        </section>
+
+        <button id="send">Calcular</button>
+
+    </main>
+
+    <script>
+        let display = document.getElementById("res"), load = document.getElementById("load")
+
+        document.getElementById("send").addEventListener("click", () => {
+            let val1 = document.getElementById("value1").value, val2 = document.getElementById("value2").value
+
+            val1 == 0 || val2 == 0
+            ?
+                alert("Preencha todos os dados") 
+            :
+                calc(Number(val1), Number(val2))
+        })
+
+        function calc(v1, v2) {
+            let radio = document.getElementsByName("calc")
+            
+            for (let i = 0; i < radio.length; i++) {
+                if (radio[i].checked) {
+                    display.value = ""
+                    load.classList.add("load")
+
+                    setTimeout(() => {
+                        load.classList.remove("load")
+
+                        switch (i) {
+                        case 0:
+                            display.value = v1 + v2
+                            break;
+                        case 1:
+                            display.value = v1 - v2
+                            break;
+                        case 2:
+                            display.value = v1 * v2
+                            break;
+                        case 3:
+                            display.value = v1 / v2
+                            break;
+                    }
+                    }, 1001)
+
+                    break
+                }
+            }
+        }
+    </script>
+</body>
+</html>
