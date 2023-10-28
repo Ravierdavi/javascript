@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exponentiation</title>
+</head>
+<body>
+    <h1>JavaScript Arithmetic</h1>
+    <h2>The ** Operator</h2>
+
+    <p id="demo1"></p>
+
+    <p id="demo2"></p>
+
+    <script>
+        let x = 5
+        x = x ** 2
+        document.getElementById("demo1").innerHTML = x
+
+        // x ** y produces the same result as Math.pow(x,y):
+        let y = 3
+        y = Math.pow(y, 3)
+        document.getElementById("demo2").innerHTML = y
+    </script>
+</body>
+</html>

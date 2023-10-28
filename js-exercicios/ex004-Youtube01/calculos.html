@@ -85,7 +85,7 @@
             font-size: 1.4em;
         }
 
-        button {
+        input[type='button'] {
             font-weight: 600;
             border: none;
             border-radius: 6px;
@@ -94,7 +94,7 @@
             transition: 0.2s ease-in;
         }
 
-        button:hover {
+        input[type='button']:hover {
             opacity: .8;
             transform: scale(1.1);
         }
@@ -112,7 +112,7 @@
     </style>
 </head>
 <body>
-    <main class="estrutura">
+    <form class="estrutura">
 
         <section class="values">
             <label>
@@ -137,9 +137,9 @@
             <div id="load"></div>
         </section>
 
-        <button id="send">Calcular</button>
+        <input type="button" value="Calcular" id="send"></input>
 
-    </main>
+    </form>
 
     <script>
         let display = document.getElementById("res"), load = document.getElementById("load")
@@ -147,7 +147,7 @@
         document.getElementById("send").addEventListener("click", () => {
             let val1 = document.getElementById("value1").value, val2 = document.getElementById("value2").value
 
-            val1 == 0 || val2 == 0
+            val1 == "" || val2 == ""
             ?
                 alert("Preencha todos os dados") 
             :
