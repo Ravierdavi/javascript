@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rélogio</title>
+    <link rel="stylesheet" href="styles/mobile.css">
+</head>
+<body>
+    <h1>Rélogio</h1>
+    <div class="corpo">
+        <div class="corpo-detalhe">
+            <div class="centro"></div>
+            <div class="seg" id="s"></div>
+            <div class="min" id="m"></div>
+            <div class="hour" id="h"></div>
+        </div>
+    </div>
+    <section class="buttons">
+        <button id="start">Iniciar</button>
+        <button id="current">Atual</button>
+        <div class="container-custom">
+            <button id="custom">Personalizar</button>
+            <input type="time" name="time" id="time" value="23:59:59">
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

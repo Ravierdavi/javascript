@@ -1,0 +1,117 @@
+@charset "UTF-8";
+/* Configurações gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Relógio */
+h1 {
+    margin: 50px 20px 30px 20px;
+    text-align: center;
+    font-size: 2.6em;
+}
+
+.corpo {
+    width: 350px;
+    height: 350px;
+    border: 5px solid black;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+
+.corpo-detalhe {
+    width: 335px;
+    height: 335px;
+    border: 5px dashed black;
+    border-radius: 50%;
+    position: relative;
+}
+
+.centro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.seg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    width: 3px;
+    height: 130px;
+    background-color: black;
+    transform-origin: left top;
+}
+
+.min {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    width: 5px;
+    height: 130px;
+    background-color: black;
+    transform-origin: left top;
+}
+
+.hour {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    width: 6px;
+    height: 100px;
+    background-color: black;
+    transform-origin: left top;
+}
+
+/* Botões */
+.buttons {
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    cursor: pointer;
+    width: 90px;
+    height: 35px;
+    margin-top: 25px;
+    background-color: rgba(0, 0, 0, 0.247);
+    border: none;
+    border-radius: 2px;
+    font-weight: 600;
+    transition: 0.4s;
+}
+
+button:hover {
+    transform: translateY(-5px) scale(1.1);
+}
+
+.container-custom {
+    display: grid;
+    justify-items: center;
+}
+
+#time {
+    margin-top: 5px;
+    display: none;
+}
