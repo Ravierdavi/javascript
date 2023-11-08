@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>JavaScript String Methods</h1>
+    <p>Convert string to upper case:</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo">Hello World!</p>
+
+    <script>
+        const res = document.getElementById("demo")
+        function myFunction() {
+            const upperCase = res.innerHTML.toUpperCase()
+            res.innerHTML = upperCase
+        }
+    </script>
+</body>
+</html>

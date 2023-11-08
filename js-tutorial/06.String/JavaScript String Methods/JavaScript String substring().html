@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h1>JavaScript String Methods</h1>
+    <p>The substring() method extract a part of a string and returns the extracted parts in a new string:</p>
+
+    <p id="demo"></p>
+
+    <script>
+        // substring() is similar to slice().
+
+        // The difference is that start and end values less than 0 are treated as 0 in substring().
+        let str = "Apple, Banana, Kiwi";
+        document.getElementById("demo").innerHTML = str.substring(7,13);
+
+        // If you omit the second parameter, substring() will slice out the rest of the string.
+    </script>
+
+</body>
+</html>

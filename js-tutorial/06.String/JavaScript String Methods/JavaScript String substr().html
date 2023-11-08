@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h1>JavaScript String Methods</h1>
+    <p>The substr() method extract a part of a string
+    and returns the extracted parts in a new string:</p>
+
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+
+    <script>
+        // substr() is similar to slice().
+
+        // The difference is that the second parameter specifies the length of the extracted part.
+        let str = "Apple, Banana, Kiwi";
+        document.getElementById("demo1").innerHTML = str.substr(7,6);
+
+        // If the first parameter is negative, the position counts from the end of the string:
+        document.getElementById("demo2").innerHTML = str.substr(-12,6);
+    </script>
+
+</body>
+</html>
+
