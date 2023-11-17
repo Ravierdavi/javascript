@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>JavaScript Arrays</h1>
+    <h2>The reduce() Method</h2>
+    
+    <p>Find the sum of all numbers in an array:</p>
+    
+    <p id="demo"></p>
+
+    <script>
+        const numbers = [23, 2, 50, 12, 35,65]
+        const all = numbers.reduce((total, value, index, array) => total + value, 199)
+        // numbers.reduce()
+        // ou
+        // numbers.reduceRight()
+
+        document.getElementById("demo").innerHTML = all
+    </script>
+</body>
+</html>

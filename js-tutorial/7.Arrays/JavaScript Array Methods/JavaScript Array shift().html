@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>JavaScript Arrays</h1>
+    <h2>The shift() Method</h2>
+    
+    <p>The shift() method removes the first element of an array (and "shifts" the other elements to the left):</p>
+    
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    
+    <script>
+        const names = ['Pedro', 'João', 'Pietro', 'Guntenberg'];
+        document.getElementById("demo1").innerHTML = names.join(" * ")
+        document.getElementById("demo2").innerHTML = names.shift()
+        document.getElementById("demo3").innerHTML = names.join(" * ")
+    </script>
+</body>
+</html>

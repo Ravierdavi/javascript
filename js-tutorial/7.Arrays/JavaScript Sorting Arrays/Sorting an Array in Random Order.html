@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>JavaScript Arrays</h1>
+    <h2>The sort() Method</h2>
+    
+    <p>Click the button (again and again) to sort the array in random order.</p>
+    
+    <button onclick="myFunction()">Try it</button>
+    <p id="demo"></p>
+
+    <script>
+        const res = document.getElementById("demo")
+        
+        // Create and display an array
+        const numbers = [2, 34, 362, 20, 0, 36, 34, 87, 3, 19]
+        res.innerHTML = numbers
+
+        // To sort the array in random order
+        function myFunction() {
+            numbers.sort((a, b) => 0.5 - Math.random())
+            res.innerHTML = numbers
+        }
+    </script>
+</body>
+</html>

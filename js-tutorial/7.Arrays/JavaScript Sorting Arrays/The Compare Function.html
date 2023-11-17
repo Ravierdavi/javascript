@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>JavaScript Arrays</h1>
+    <h2>The sort() Method</h2>
+    
+    <p>Click the buttons to sort the array alphabetically or numerically.</p>
+
+    <button onclick="myFunction1()">Sort Alphabetically</button>
+    <button onclick="myFunction2()">Sort Numerically</button>
+
+    <p id="res"></p>
+
+    <script>
+        const res = document.getElementById("res")
+        
+        // Create and display an array
+        const numbers = [2, 34, 362, 20, 0, 36, 34, 87, 3, 19]
+        res.innerHTML = numbers
+
+        // Sort Alphabetically
+        function myFunction1() {
+            res.innerHTML = numbers.sort()
+        }
+
+        // Sort Numerically
+        function myFunction2() {
+            res.innerHTML = numbers.sort((a, b) => a - b)
+        }
+    </script>
+</body>
+</html>

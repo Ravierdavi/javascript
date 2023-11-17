@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>JavaScript Arrays</h1> 
+    <h2>The unshift() Method</h2>
+    
+    <p>The unshift() method adds new elements to the beginning of an array:</p>
+    
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    
+    <script>
+        const names = ['Pedro', 'João', 'Pietro', 'Guntenberg'];
+        document.getElementById("demo1").innerHTML = names.join(" * ")
+        document.getElementById("demo2").innerHTML = names.unshift("Mussumano")
+        document.getElementById("demo3").innerHTML = names.join(" * ")
+    </script>
+</body>
+</html>

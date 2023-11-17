@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>JavaScript Arrays</h1>
+    <h2>The delete Method</h2>
+    
+    <p>Deleting elements leaves undefined holes in an array:</p>
+    
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    
+    <script>
+        // Warning !
+        // Array elements can be deleted using the JavaScript operator delete.
+
+        // Using delete leaves undefined holes in the array.
+
+        // Use pop() or shift() instead.        
+        const names = ['Pedro', 'João', 'Pietro', 'Guntenberg'];
+        document.getElementById("demo1").innerHTML = `The first name is ${names[0]}`
+        delete names[0]
+        document.getElementById("demo2").innerHTML = `The first name is ${names[0]}`
+    </script>
+</body>
+</html>

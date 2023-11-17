@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>JavaScript Arrays</h1>
+    <h2>The isArray() Method</h2>
+    
+    <p id="demo1"></p>
+
+    <h1>JavaScript Arrays</h1>
+    <h2>The instanceof Operator</h2>
+
+    <p>The instanceof operator returns true when used on an array:</p>
+    <p id="demo2"></p>
+
+    <script>
+        const names = ["Pedro Paulo", 'João Caua', 'Ivente sem Galo']
+        document.getElementById("demo1").innerHTML = Array.isArray(names)
+        document.getElementById("demo2").innerHTML = names instanceof Array
+    </script>
+</body>
+</html>
