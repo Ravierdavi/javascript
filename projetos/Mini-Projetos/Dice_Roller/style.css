@@ -1,0 +1,40 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+h1 {
+    font-weight: bold;
+    color: blue;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.219);
+}
+
+p {
+    max-width: 270px;
+    margin: 20px auto;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+#numBox {
+    width: 150px;
+    padding: 5px 10px;
+    font-size: 1.2em;
+}
+
+button {
+    padding: 5px 10px;
+    font-size: 1.2em;
+}
+
+.container_dices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 200px;
+    margin: auto;
+}
+
+.dice {
+    width: 60px;
+}
